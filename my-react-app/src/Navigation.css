@@ -3,12 +3,13 @@ nav {
     gap: 20px;
 }
 
-a {
+nav a {
     color: hsl(0, 0%, 100%);
     text-decoration: none;
+    font-size: 25px;
 }
 
-a:hover {
+nav a:hover {
     color: hsl(0, 0%, 28%);
     text-decoration: none;
 }

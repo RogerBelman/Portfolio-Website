@@ -1,11 +1,12 @@
+import Socials from './Socials.jsx'
 import './Body.css'
 
 function Body(){
 
     return(
-        <div>
+        <div className="Body">
             <h1>Profile</h1>
-            <p></p>
+            <Socials></Socials>
         </div>
     );
 }
