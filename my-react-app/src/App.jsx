@@ -1,9 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-
 import Profile from './Pages/Profile.jsx'
 import Projects from './Pages/Projects.jsx'
 import Experience from './Pages/Experience.jsx'
-
 import NotFound from './Pages/NotFound.jsx'
 
 

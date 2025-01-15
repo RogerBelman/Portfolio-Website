@@ -1,5 +1,4 @@
 import SocialIcon from './SocialIcon.jsx'
-
 import GitHub from '../assets/GitHub.jpg'
 import LinkedIn from '../assets/LinkedIn.png'
 

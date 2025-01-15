@@ -13,8 +13,8 @@ nav {
     color: hsl(0, 0%, 100%);
     font-size: 25px;
     text-decoration: underline overline;
-    text-decoration-color: hsl(0, 0%, 100%);
-    text-underline-offset: 7px;
+    text-decoration-color: hsl(208, 100%, 20%);
+    text-underline-offset: 10px;
 }
 
 .inactive:hover {

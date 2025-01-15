@@ -1,14 +1,12 @@
 import Header from "../Components/Header.jsx"
-import Body from "../Components/Body.jsx"
+import ProfileBody from "../Components/ProfileBody.jsx"
  
 function Profile(){
 
     return(
         <>
             <Header></Header>
-            <Body></Body>
-            <p>prof</p>
-        
+            <ProfileBody></ProfileBody>
         </>
     );
 }

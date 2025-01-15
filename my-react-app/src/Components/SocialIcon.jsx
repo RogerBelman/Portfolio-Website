@@ -13,6 +13,7 @@ function SocialIcon(props){
     const imgStyles = {
         width: "100px",
         height: "100px",
+        cursor: "pointer",
     }
 
     const buttonStyles = {
@@ -22,6 +23,7 @@ function SocialIcon(props){
         border: "2px solid hsl(0, 0%, 100%)",
         fontSize: "18px",
         width: "150px",
+        cursor: "pointer",
     }
 
     const handleClick = () => {
@@ -33,7 +35,6 @@ function SocialIcon(props){
             <img src={props.image} alt={props.name} style={imgStyles} onClick={handleClick}></img>
             <button style={buttonStyles} onClick={handleClick}>Visit {props.name}</button>
         </div>
-        
     );
 }
 
