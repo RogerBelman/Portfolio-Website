@@ -4,27 +4,20 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 0px;
-    padding: 0px;
+    margin-bottom: 30px;
 }
 
-h1 {
+.ProfileBody h1 {
     margin: 20px;
-    padding: 0px;
-}
-
-h2 {
-    margin: 0px;
-    padding: 0px;
-    color: hsl(0, 0%, 28%);
 }
 
 .Intro {
-    width: 800px;
-    margin: 30px;
+    width: 900px;
+    margin: 40px;
     padding: 0px;
+    font-size: 20px;
 }
 
-.Positioning {
-    margin: 50px;
+.Resume {
+    margin-top: 70px;
 }

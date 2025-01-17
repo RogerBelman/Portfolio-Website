@@ -1,5 +1,6 @@
-import Header from "../Components/Header.jsx"
-import ProjectsBody from "../Components/ProjectsBody.jsx"
+import Header from '../Components/Header.jsx'
+import ProjectsBody from '../Components/ProjectsBody.jsx'
+import Footer from '../Components/Footer.jsx'
 
 function Projects(){
 
@@ -7,6 +8,7 @@ function Projects(){
         <>
             <Header></Header>
             <ProjectsBody></ProjectsBody>
+            <Footer></Footer>
         </>
     );
 }

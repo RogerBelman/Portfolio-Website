@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
+import Button from './Button'
 
 function SocialIcon(props){
 
     const styles = {
         display: "flex",
-        width: "150px",
+        width: "200px",
         flexDirection: "column",
         alignItems: "center",
         gap: "10px"
@@ -16,16 +17,6 @@ function SocialIcon(props){
         cursor: "pointer",
     }
 
-    const buttonStyles = {
-        backgroundColor: "hsl(0, 0%, 0%)",
-        fontFamily: "'Orbitron'",
-        color: "hsl(0, 0%, 100%)",
-        border: "2px solid hsl(0, 0%, 100%)",
-        fontSize: "18px",
-        width: "150px",
-        cursor: "pointer",
-    }
-
     const handleClick = () => {
         window.open(props.link, "_blank");
     };
@@ -33,7 +24,7 @@ function SocialIcon(props){
     return(
         <div style={styles}>
             <img src={props.image} alt={props.name} style={imgStyles} onClick={handleClick}></img>
-            <button style={buttonStyles} onClick={handleClick}>Visit {props.name}</button>
+            <Button handle={handleClick} text={"Visit " + props.name}></Button>
         </div>
     );
 }

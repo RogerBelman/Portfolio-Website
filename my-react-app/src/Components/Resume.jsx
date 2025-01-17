@@ -1,3 +1,5 @@
+import Button from './Button'
+
 function Resume(){
 
     const styles = {
@@ -5,9 +7,7 @@ function Resume(){
         width: "350px",
         flexDirection: "column",
         alignItems: "center",
-        fontSize: "25px",
-        color: "hsl(208, 100%, 25%)",
-        fontWeight: "bold",
+        gap: "30px",
     }
 
     const buttonPlacement = {
@@ -15,16 +15,6 @@ function Resume(){
         flexDirection: "row",
         alignItems: "center",
         gap: "50px",
-    }
-
-    const buttonStyles = {
-        backgroundColor: "hsl(0, 0%, 0%)",
-        fontFamily: "'Orbitron'",
-        color: "hsl(0, 0%, 100%)",
-        border: "2px solid hsl(0, 0%, 100%)",
-        fontSize: "18px",
-        width: "150px",
-        cursor: "pointer",
     }
 
     const handleView = () => {
@@ -42,10 +32,10 @@ function Resume(){
 
     return(
         <div style={styles}>
-            <p className="Resume">Checkout My Resume</p>
+            <h3>Checkout My Resume</h3>
             <div style={buttonPlacement}>
-                <button style={buttonStyles} onClick={handleView}>View</button>
-                <button style={buttonStyles} onClick={handleDownload}>Download</button>
+                <Button handle={handleView} text="View"></Button>
+                <Button handle={handleDownload} text="Download"></Button>
             </div>
         </div>
     );

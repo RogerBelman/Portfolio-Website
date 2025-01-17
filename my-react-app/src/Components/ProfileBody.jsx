@@ -16,7 +16,7 @@ function ProfileBody(){
                 <b> full-stack development skills</b>. Feel free to explore my projects, learn more about my experiences, or get in touch.
             </p>
             <Socials></Socials>
-            <div className="Positioning">
+            <div className="Resume">
                 <Resume></Resume>
             </div>
         </div>

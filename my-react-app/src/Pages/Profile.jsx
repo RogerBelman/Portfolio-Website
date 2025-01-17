@@ -1,5 +1,6 @@
-import Header from "../Components/Header.jsx"
-import ProfileBody from "../Components/ProfileBody.jsx"
+import Header from '../Components/Header.jsx'
+import ProfileBody from '../Components/ProfileBody.jsx'
+import Footer from '../Components/Footer.jsx'
  
 function Profile(){
 
@@ -7,6 +8,7 @@ function Profile(){
         <>
             <Header></Header>
             <ProfileBody></ProfileBody>
+            <Footer></Footer>
         </>
     );
 }
