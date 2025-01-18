@@ -1,0 +1,23 @@
+.AnExperience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    width: 1000px;
+}
+
+.AnExperience h3 {
+    font-weight: normal;
+}
+
+.AnExperience p {
+    margin: 0px;
+}
+
+hr {
+    border: 1px solid hsl(0, 0%, 28%);
+    margin: 50px;
+    width: 1000px; 
+}

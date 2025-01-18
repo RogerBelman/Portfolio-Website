@@ -12,8 +12,8 @@ function AProject(props){
         <div className="AProject">
             <h2>{props.name}</h2>
             <h3>{props.skills}</h3>
-            <img className="Image" src={props.image} alt={props.name}></img>
-            <Button handle={handleClick} text="GitHub Link" link={props.link}></Button>
+            {props.image && <img className="Image" src={props.image} alt={props.name} />}
+            <Button handle={handleClick} text="GitHub Link"></Button>
         </div>
     );
 }
