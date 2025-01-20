@@ -1,5 +1,4 @@
-import RogerBelman from '../assets/Me.jpg'
-
+import RogerBelman from '/src/assets/Me.jpg'
 function Headshot(){
 
     const imgStyles = {

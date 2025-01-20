@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import Button from './Button'
+import Button from '../Button'
 import './AProject.css'
 
 function AProject(props){
@@ -13,7 +13,7 @@ function AProject(props){
             <h2>{props.name}</h2>
             <h3>{props.skills}</h3>
             {props.image && <img className="Image" src={props.image} alt={props.name} />}
-            <Button handle={handleClick} text="GitHub Link"></Button>
+            {props.link != "" && <Button handle={handleClick} text="GitHub Link"></Button>}
         </div>
     );
 }

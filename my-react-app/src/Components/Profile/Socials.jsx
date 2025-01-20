@@ -1,6 +1,6 @@
-import SocialIcon from './SocialIcon.jsx'
-import GitHub from '../assets/GitHub.jpg'
-import LinkedIn from '../assets/LinkedIn.png'
+import SocialIcon from '../Profile/SocialIcon.jsx'
+import GitHub from '/src/assets/GitHub.jpg'
+import LinkedIn from '/src/assets/LinkedIn.png'
 
 function Socials(){
 
