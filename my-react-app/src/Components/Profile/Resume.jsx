@@ -7,7 +7,7 @@ function Resume(){
         width: "350px",
         flexDirection: "column",
         alignItems: "center",
-        gap: "30px",
+        gap: "20px",
     }
 
     const buttonPlacement = {
@@ -31,9 +31,9 @@ function Resume(){
     };
 
     return(
-        <div style={styles}>
+        <div style={styles} className="ResumeGap" >
             <h3>Checkout My Resume</h3>
-            <div style={buttonPlacement}>
+            <div style={buttonPlacement} className="Buttons">
                 <Button handle={handleView} text="View"></Button>
                 <Button handle={handleDownload} text="Download"></Button>
             </div>

@@ -17,8 +17,13 @@
     width: 900px;
 }
 
-hr {
-    border: 1px solid hsl(0, 0%, 28%);
-    margin: 50px;
-    width: 1000px; 
+@media (max-width: 768px) {
+    .AProject {
+        width: 350px;
+    }
+    
+    .Image {
+        height: 350px;
+        width: 350px;
+    }
 }

@@ -26,3 +26,22 @@ header {
     margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 0px;
+        margin-bottom: 30px;
+    }
+
+    .header-content {
+        margin-bottom: 10px;
+    }
+    
+    .text-content h1 {
+        font-size: 25px;
+    }
+
+    .Logo img {
+        width: 100px;
+    }
+  }

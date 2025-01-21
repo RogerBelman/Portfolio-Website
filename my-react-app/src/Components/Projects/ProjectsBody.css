@@ -11,3 +11,24 @@
 .ProjectsBody h1 {
     margin: 20px;
 }
+
+.ProjectsBody hr {
+    border: 1px solid hsl(0, 0%, 28%);
+    margin: 50px;
+    width: 1000px; 
+}
+
+@media (max-width: 768px) {
+    .ProjectsBody {
+        margin-bottom: 20px;
+    }
+
+    .ProjectsBody h1 {
+        margin: 5px;
+    }
+    
+    .ProjectsBody hr {
+        margin: 20px;
+        width: 350px; 
+    }
+}

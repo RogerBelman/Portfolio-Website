@@ -16,8 +16,8 @@
     margin: 0px;
 }
 
-hr {
-    border: 1px solid hsl(0, 0%, 28%);
-    margin: 50px;
-    width: 1000px; 
+@media (max-width: 768px) {
+    .AnExperience {
+        width: 350px;
+    }
 }

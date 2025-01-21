@@ -7,7 +7,7 @@ function ProjectsBody(){
         <div className="ProjectsBody">
             <h1>Projects</h1>
             <AProject name="Portfolio Website" skills="JavaScript (ReactJS), HTML/CSS, GitHub, VS Code" 
-                link="/" image={null}></AProject>
+                link="https://github.com/RogerBelman/Portfolio-Website.git" image={null}></AProject>
             <hr></hr>
             <AProject name="Utd Parking Availability App" skills="JavaScript, GitHub, VS Code" 
                 link="" image={null}></AProject>

@@ -1,16 +1,11 @@
 import logo from '../assets/RB.jpg'
+import './Logo.css'
 
 function Logo(){
 
-    const styles = {
-        width: "150px",
-        height: "150px",
-        marginRight: "20px",
-    }
-
     return(
         <div>
-            <img src={logo} alt="RB" style={styles}></img>
+            <img src={logo} alt="RB" className="Logo"></img>
         </div>
     );
 }

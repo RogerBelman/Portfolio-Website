@@ -6,7 +6,7 @@ function Navigation(){
     const getLinkClass = ({ isActive }) => (isActive ? 'active' : 'inactive');
    
     return(
-        <nav>
+        <nav className="Navigation">
             <NavLink to="/" className={getLinkClass}>Profile</NavLink>
             <NavLink to="/Projects" className={getLinkClass}>Projects</NavLink>
             <NavLink to="/Experience" className={getLinkClass}>Experience</NavLink>

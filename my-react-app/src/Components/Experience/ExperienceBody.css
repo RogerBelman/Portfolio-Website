@@ -11,3 +11,24 @@
 .ExperienceBody h1 {
     margin: 20px;
 }
+
+.ExperienceBody hr {
+    border: 1px solid hsl(0, 0%, 28%);
+    margin: 50px;
+    width: 1000px; 
+}
+
+@media (max-width: 768px) {
+    .ExperienceBody {
+        margin-bottom: 20px;
+    }
+    
+    .ExperienceBody h1 {
+        margin: 5px;
+    }
+    
+    .ExperienceBody hr {
+        margin: 20px;
+        width: 350px; 
+    }
+}

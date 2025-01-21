@@ -1,20 +1,10 @@
 import PropTypes from 'prop-types'
+import './Button.css'
 
 function Button(props){
 
-    const buttonStyles = {
-        backgroundColor: "hsl(0, 0%, 0%)",
-        fontFamily: "'Orbitron'",
-        color: "hsl(0, 0%, 100%)",
-        border: "4px solid hsl(0, 0%, 100%)",
-        fontSize: "20px",
-        width: "200px",
-        cursor: "pointer",
-        fontWeight: "bold",
-    }
-
     return(
-        <button style={buttonStyles} onClick={props.handle}>{props.text}</button>
+        <button className="Button" onClick={props.handle}>{props.text}</button>
     );
 }
 
