@@ -4,10 +4,10 @@
     margin-right: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .Logo {
-        width: 75px;
-        height: 75px;
-        margin-right: 5px;
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
     }
 }

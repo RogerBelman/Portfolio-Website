@@ -1,21 +1,7 @@
 import Button from '../Button'
+import './Resume.css'
 
 function Resume(){
-
-    const styles = {
-        display: "flex",
-        width: "350px",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "20px",
-    }
-
-    const buttonPlacement = {
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        gap: "50px",
-    }
 
     const handleView = () => {
         window.open("/Resume_Roger_Belman.pdf", "_blank");
@@ -31,9 +17,9 @@ function Resume(){
     };
 
     return(
-        <div style={styles} className="ResumeGap" >
+        <div className="resume-placement">
             <h3>Checkout My Resume</h3>
-            <div style={buttonPlacement} className="Buttons">
+            <div className="button-placement">
                 <Button handle={handleView} text="View"></Button>
                 <Button handle={handleDownload} text="Download"></Button>
             </div>

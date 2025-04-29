@@ -7,12 +7,13 @@
     width: 200px;
     cursor: pointer;
     font-weight: bold;
+    margin-top: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .Button {
-        border: 2px solid hsl(0, 0%, 100%);
         font-size: 13px;
         width: 140px;
+        border: 2px solid hsl(0, 0%, 100%);
     }
 }

@@ -5,7 +5,7 @@
     justify-content: center;
     text-align: center;
     gap: 10px;
-    width: 1000px;
+    width: 100%;
 }
 
 .AnExperience h3 {
@@ -14,10 +14,4 @@
 
 .AnExperience p {
     margin: 0px;
-}
-
-@media (max-width: 768px) {
-    .AnExperience {
-        width: 350px;
-    }
 }

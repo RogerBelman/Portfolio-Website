@@ -1,0 +1,25 @@
+.icon-placement {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.img-style {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+@media (max-width: 640px) {
+    .icon-placement {
+        width: 140px;
+    }
+    
+    .img-style {
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+    }
+}

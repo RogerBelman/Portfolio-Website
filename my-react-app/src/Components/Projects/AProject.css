@@ -5,7 +5,7 @@
     justify-content: center;
     text-align: center;
     gap: 10px;
-    width: 1000px;
+    width: 100%;
 }
 
 .AProject h3 {
@@ -14,16 +14,6 @@
 
 .Image {
     height: 900px;
-    width: 900px;
-}
-
-@media (max-width: 768px) {
-    .AProject {
-        width: 350px;
-    }
-    
-    .Image {
-        height: 350px;
-        width: 350px;
-    }
+    width: 90%;
+    height: auto;
 }
