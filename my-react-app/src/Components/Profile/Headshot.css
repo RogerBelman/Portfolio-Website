@@ -1,13 +1,5 @@
 .headshot {
-    width: 200px;
-    height: 200px;
+    width: 13rem;
+    height: 13rem;
     border-radius: 50%;
-}
-
-@media (max-width: 640px) {
-    .headshot {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-    }
 }

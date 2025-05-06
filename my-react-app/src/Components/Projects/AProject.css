@@ -4,16 +4,21 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 10px;
-    width: 100%;
+    gap: .5rem;
+    width: 80%;
 }
 
 .AProject h3 {
     font-weight: normal;
 }
 
+.AProject p {
+    margin: .25rem;
+    white-space: pre-line;
+    line-height: 1.5rem;
+}
+
 .Image {
-    height: 900px;
     width: 90%;
     height: auto;
 }

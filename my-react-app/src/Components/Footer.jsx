@@ -4,7 +4,7 @@ function Footer(){
 
     return(
         <footer>
-            <p>Last Updated January 2025</p>
+            <p>Last Updated May 2025</p>
         </footer>
     );
 }

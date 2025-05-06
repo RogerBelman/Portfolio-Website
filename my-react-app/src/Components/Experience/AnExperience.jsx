@@ -12,7 +12,8 @@ function AnExperience(props){
         <div className='AnExperience'>
             <h2>{props.company}</h2>
             <h3>{props.position}</h3>
-            <p>{props.skills}</p>        
+            <p className="grey">{props.skills}</p>
+            <p className="white">{props.description}</p>   
             <Button handle={handleClick} text="Visit Their Website"></Button>
         </div>
     );
@@ -23,6 +24,7 @@ AnExperience.propTypes = {
     position: PropTypes.string,
     link: PropTypes.string,
     skills: PropTypes.string,
+    description: PropTypes.string,
 }
 
 export default AnExperience

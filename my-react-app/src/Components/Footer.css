@@ -2,12 +2,6 @@ footer {
     display: flex;
     justify-content: center;
     text-align: center; 
-    padding: 10px 20px;
-    font-size: 12px;
-}
-
-@media (max-width: 640px) {
-    footer p {
-        font-size: 10px!important;
-    }
+    padding: .5rem 1.25rem;
+    font-size: .75rem;
 }

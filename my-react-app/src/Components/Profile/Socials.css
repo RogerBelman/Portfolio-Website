@@ -1,12 +1,6 @@
 .socials-placement{
     display: flex;
-    gap: 50px;
+    gap: 3rem;
     align-items: center;
     justify-content: center;
-}
-
-@media (max-width: 640px) {
-    .socials-placement{
-        gap: 15px;
-    }
 }

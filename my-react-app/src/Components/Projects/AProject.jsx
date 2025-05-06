@@ -12,6 +12,7 @@ function AProject(props){
         <div className="AProject">
             <h2>{props.name}</h2>
             <h3>{props.skills}</h3>
+            <p>{props.description}</p>  
             {props.image && <img className="Image" src={props.image} alt={props.name} />}
             {props.link != "" && <Button handle={handleClick} text="GitHub Link"></Button>}
         </div>
@@ -23,6 +24,7 @@ AProject.propTypes = {
     link: PropTypes.string,
     image: PropTypes.string,
     skills: PropTypes.string,
+    description: PropTypes.string,
 }
 
 export default AProject

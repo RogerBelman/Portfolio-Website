@@ -4,8 +4,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 10px;
-    width: 100%;
+    gap: .5rem;
+    width: 80%;
 }
 
 .AnExperience h3 {
@@ -13,5 +13,14 @@
 }
 
 .AnExperience p {
-    margin: 0px;
+    margin: .25rem;
+}
+
+.grey {
+    color: hsl(0, 0%, 28%);
+}
+
+.white {
+    white-space: pre-line;
+    line-height: 1.5rem;
 }

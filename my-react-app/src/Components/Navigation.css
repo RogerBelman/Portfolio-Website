@@ -1,51 +1,23 @@
 nav {
     display: flex;
-    gap: 30px;
+    gap: 2rem;
     font-weight: bold;
+    font-size: 1.75rem;
 }
 
 .inactive {
     color: hsl(0, 0%, 100%);
     text-decoration: none;
-    font-size: 25px;
 }
 
 .active {
     color: hsl(0, 0%, 100%);
-    font-size: 25px;
     text-decoration: underline overline;
     text-decoration-color: hsl(208, 100%, 20%);
-    text-underline-offset: 10px;
+    text-underline-offset: .5rem;
 }
 
 .inactive:hover {
     color: hsl(0, 0%, 28%);
-    font-size: 25px;
     text-decoration: none;
-}
-
-@media (max-width: 640px) {
-    nav {
-        gap: 10px;
-    }
-
-    .inactive {
-        color: hsl(0, 0%, 100%);
-        text-decoration: none;
-        font-size: 18px;
-    }
-    
-    .active {
-        color: hsl(0, 0%, 100%);
-        font-size: 18px;
-        text-decoration: underline overline;
-        text-decoration-color: hsl(208, 100%, 20%);
-        text-underline-offset: 10px;
-    }
-    
-    .inactive:hover {
-        color: hsl(0, 0%, 28%);
-        font-size: 18px;
-        text-decoration: none;
-    }
 }

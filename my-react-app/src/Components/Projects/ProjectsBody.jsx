@@ -6,14 +6,18 @@ function ProjectsBody(){
     return(
         <div className="ProjectsBody">
             <h1>Projects</h1>
-            <AProject name="Portfolio Website" skills="JavaScript (ReactJS), HTML/CSS, GitHub, VS Code" 
-                link="https://github.com/RogerBelman/Portfolio-Website.git" image={null}></AProject>
-            <hr></hr>
-            <AProject name="Utd Parking Availability App" skills="JavaScript, GitHub, VS Code" 
-                link="" image={null}></AProject>
-            <hr></hr>
-            <AProject name="Dallas & Phoenix Arrests Data Analysis" skills="R, RStudio" 
-                link="" image={null}></AProject>
+            <AProject 
+                name="Portfolio Website" 
+                skills="React, React Router, VPS (DigitalOcean), SSL, Custom Domain" 
+                link="https://github.com/RogerBelman/Portfolio-Website.git" 
+                description={
+                    "Developed a responsive portfolio website using React and React Router.\n" +
+                    "Used GitHub for version control and VS Code for development.\n" +
+                    "Deployed to a VPS (rogerbelman.com) with SSL for secure HTTPS access."
+                } 
+                image={null}>
+            </AProject>
+
         </div>
     );
 }

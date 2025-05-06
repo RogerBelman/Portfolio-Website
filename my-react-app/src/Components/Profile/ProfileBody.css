@@ -4,26 +4,16 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
 }
 
 .ProfileBody h1 {
-    margin: 20px;
+    margin: 1rem;
 }
 
 .Intro {
     width: 80%;
-    margin: 40px;
-    padding: 0px;
-    font-size: 20px;
-}
-
-@media (max-width: 640px) {
-    .ProfileBody {
-        margin-bottom: 15px;
-    }
-
-    .Intro {
-        margin: 30px;
-    }
+    margin: 2.5rem;
+    padding: 0rem;
+    font-size: 1.25em;
 }

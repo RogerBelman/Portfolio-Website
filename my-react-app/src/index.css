@@ -1,53 +1,68 @@
+html {
+    font-size: 100%;
+}
+
+#root {
+    margin: 0 auto;
+    max-width: 90rem;
+}
+
 body {
-    margin: 0px;
-    padding: 0px 50px 0px 50px;
+    margin: 0rem;
+    padding: 0rem 3rem 0rem 3rem;
     background-color: hsl(0, 0%, 0%);
     font-family: 'Orbitron';
     color: hsl(0, 0%, 100%)
 }
 
 h1 {
-    margin: 0px;
-    padding: 0px;
-    font-size: 30px;
+    margin: 0rem;
+    padding: 0rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 h2 {
-    margin: 0px;
-    padding: 0px;
+    margin: 0rem;
+    padding: 0rem;
     color: hsl(0, 0%, 28%);
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 h3 {
-    margin: 0px;
-    padding: 0px;
+    margin: 0rem;
+    padding: 0rem;
     color: hsl(208, 100%, 25%);
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
-@media (max-width: 640px) {
-    body {
+p {
+    margin: 0rem;
+    padding: 0rem;
+}
 
-        padding: 0px 10px 0px 10px;
+@media (max-width: 600px) {
+    html {
+        font-size: 85%;
     }
+}
 
-    h1 {
-        font-size: 20px!important;
+@media (max-width: 500px) {
+    html {
+        font-size: 70%;
     }
-    
-    h2 {
-        font-size: 18px!important;
-    }
-    
-    h3 {
-        font-size: 18px!important;
-    }
+}
 
-    p {
-        font-size: 13px!important;
+@media (max-width: 420px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 360px) {
+    html {
+        font-size: 50%;
     }
 }
