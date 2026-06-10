@@ -20,7 +20,18 @@
     color: hsl(0, 0%, 28%);
 }
 
-.white {
-    white-space: pre-line;
+.AnExperience .description-list {
+    margin: .25rem;
+    padding: 0rem;
+    list-style: none;
     line-height: 1.5rem;
+    text-align: center;
+}
+
+.AnExperience .description-list li::before {
+    content: "- ";
+}
+
+.white {
+    color: hsl(0, 0%, 100%);
 }

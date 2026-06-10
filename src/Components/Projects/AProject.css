@@ -12,10 +12,16 @@
     font-weight: normal;
 }
 
-.AProject p {
+.AProject .description-list {
     margin: .25rem;
-    white-space: pre-line;
+    padding: 0rem;
+    list-style: none;
     line-height: 1.5rem;
+    text-align: center;
+}
+
+.AProject .description-list li::before {
+    content: "- ";
 }
 
 .Image {
