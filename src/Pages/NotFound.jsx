@@ -5,10 +5,12 @@ function NotFound(){
     const navigate = useNavigate()
 
     useEffect(() => {
-        setTimeout(() => {
+        const timeoutId = setTimeout(() => {
             navigate(-1)
         }, 4000)
-    }, [])
+
+        return () => clearTimeout(timeoutId)
+    }, [navigate])
 
     const styles = {
         display: "flex",
@@ -16,7 +18,7 @@ function NotFound(){
         textAlign: "center",
     }
 
-    return <h1 style={styles}>Page Not Found<br/><br/>Returing</h1>
+    return <h1 style={styles}>Page Not Found<br/><br/>Returning</h1>
 }
 
 export default NotFound

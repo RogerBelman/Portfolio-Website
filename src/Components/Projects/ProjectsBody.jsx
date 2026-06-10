@@ -11,9 +11,9 @@ function ProjectsBody(){
                 skills="React, React Router, VPS (DigitalOcean), SSL, Custom Domain" 
                 link="https://github.com/RogerBelman/Portfolio-Website.git" 
                 description={
-                    "Developed a responsive portfolio website using React and React Router.\n" +
-                    "Used GitHub for version control and VS Code for development.\n" +
-                    "Deployed to a VPS (rogerbelman.com) with SSL for secure HTTPS access."
+                    "- Developed a responsive portfolio website using React and React Router.\n" +
+                    "- Used GitHub for version control and VS Code for development.\n" +
+                    "- Deployed to a VPS (rogerbelman.com) with SSL for secure HTTPS access."
                 } 
                 image={null}>
             </AProject>

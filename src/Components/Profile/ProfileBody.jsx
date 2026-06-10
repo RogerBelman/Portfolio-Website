@@ -10,7 +10,7 @@ function ProfileBody(){
             <h2>Welcome To My Portfolio Website Built Using React</h2>
             <h1>Profile</h1>
             <Headshot></Headshot>
-            <p className="Intro">Hi, I'm Roger Belman! I'm a passionate
+            <p className="Intro">Hi, I&apos;m Roger Belman! I&apos;m a passionate
                 <b> Software Engineering Student</b> at the
                 <b> University of Texas at Dallas</b>, looking to expand my
                 <b> Software Development Skills</b>. Feel free to explore my projects, learn more about my experiences, or get in touch.
