@@ -1,15 +1,55 @@
-.resume-placement {
+.Resume {
     display: flex;
+    justify-content: center;
     width: 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 4rem;
 }
 
-.button-placement {
+.resume-placement {
     display: flex;
+    width: min(100%, 36rem);
+    box-sizing: border-box;
     flex-direction: row;
     align-items: center;
-    gap: 3rem;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 4rem;
+    padding: 1.25rem;
+    background-color: hsl(0, 0%, 4%);
+    border: .125rem solid hsl(0, 0%, 28%);
+    border-radius: .5rem;
+    transition: border-color 160ms ease;
+}
+
+.resume-placement:hover,
+.resume-placement:focus-within {
+    border-color: hsl(208, 100%, 25%);
+}
+
+.resume-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .25rem;
+    text-align: left;
+}
+
+.resume-copy p {
+    color: hsl(0, 0%, 70%);
+}
+
+.resume-placement .Button {
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .resume-placement {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .resume-copy {
+        align-items: center;
+        text-align: center;
+    }
 }

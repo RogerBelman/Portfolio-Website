@@ -6,10 +6,10 @@ function Navigation(){
     const getLinkClass = ({ isActive }) => (isActive ? 'active' : 'inactive');
    
     return(
-        <nav>
+        <nav aria-label="Primary navigation">
             <NavLink to="/" className={getLinkClass}><p>Profile</p></NavLink>
-            <NavLink to="/Projects" className={getLinkClass}><p>Projects</p></NavLink>
-            <NavLink to="/Experience" className={getLinkClass}><p>Experience</p></NavLink>
+            <NavLink to="/projects" className={getLinkClass}><p>Projects</p></NavLink>
+            <NavLink to="/experience" className={getLinkClass}><p>Experience</p></NavLink>
         </nav>
     );
 }

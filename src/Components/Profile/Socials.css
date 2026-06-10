@@ -1,6 +1,7 @@
 .socials-placement{
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
     justify-content: center;
+    margin-top: 1rem;
 }

@@ -4,10 +4,6 @@ import './AProject.css'
 
 function AProject(props){
 
-    const handleClick = () => {
-        window.open(props.link, "_blank");
-    };
-
     return(
         <div className="AProject">
             <h2>{props.name}</h2>
@@ -18,17 +14,17 @@ function AProject(props){
                 ))}
             </ul>
             {props.image && <img className="Image" src={props.image} alt={props.name} />}
-            {props.link != "" && <Button handle={handleClick} text="GitHub Link"></Button>}
+            {props.link && <Button href={props.link} target="_blank" text="GitHub Link"></Button>}
         </div>
     );
 }
 
 AProject.propTypes = {
-    name: PropTypes.string,
-    link: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
     image: PropTypes.string,
-    skills: PropTypes.string,
-    description: PropTypes.arrayOf(PropTypes.string),
+    skills: PropTypes.string.isRequired,
+    description: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default AProject

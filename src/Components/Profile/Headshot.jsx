@@ -4,7 +4,9 @@ import './Headshot.css'
 function Headshot(){
 
     return(
-        <img src={RogerBelman} className="headshot" alt="Roger Belman"></img>
+        <div className="headshot-frame">
+            <img src={RogerBelman} className="headshot" alt="Roger Belman"></img>
+        </div>
     );
 }
 

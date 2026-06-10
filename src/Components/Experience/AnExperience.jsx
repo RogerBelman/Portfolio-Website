@@ -4,10 +4,6 @@ import './AnExperience.css'
 
 function AnExperience(props){
 
-    const handleClick = () => {
-        window.open(props.link, "_blank");
-    };
-
     return(
         <div className='AnExperience'>
             <h2>{props.company}</h2>
@@ -18,17 +14,17 @@ function AnExperience(props){
                     <li key={item}>{item}</li>
                 ))}
             </ul>
-            <Button handle={handleClick} text="Visit Their Website"></Button>
+            <Button href={props.link} target="_blank" text="Visit Their Website"></Button>
         </div>
     );
 }
 
 AnExperience.propTypes = {
-    company: PropTypes.string,
-    position: PropTypes.string,
-    link: PropTypes.string,
-    skills: PropTypes.string,
-    description: PropTypes.arrayOf(PropTypes.string),
+    company: PropTypes.string.isRequired,
+    position: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    skills: PropTypes.string.isRequired,
+    description: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default AnExperience
