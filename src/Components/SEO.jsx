@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 const siteName = 'Roger Belman'
-const baseUrl = 'https://www.rogerbelman.com'
+const baseUrl = 'https://rogerbelman.com'
 const defaultImage = `${baseUrl}/RB.jpg`
 
 function setMetaAttribute(selector, attribute, value) {
