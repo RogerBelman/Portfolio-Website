@@ -5,8 +5,8 @@ function SocialIcon(props){
 
     return(
         <div className="icon-placement">
-            <a className="social-link" href={props.link} target="_blank" rel="noopener noreferrer" aria-label={props.name}>
-                <img src={props.image} alt={props.name} className="img-style"></img>
+            <a className="social-link" href={props.link} target="_blank" rel="noopener noreferrer" aria-label={`Visit Roger Belman on ${props.name}`}>
+                <img src={props.image} alt="" className="img-style"></img>
             </a>
         </div>
     );

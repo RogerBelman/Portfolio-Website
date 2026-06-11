@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const siteName = 'Roger Belman'
 const baseUrl = 'https://rogerbelman.com'
-const defaultImage = `${baseUrl}/RB.jpg`
+const defaultImage = `${baseUrl}/images/profile-preview.jpg`
 
 function setMetaAttribute(selector, attribute, value) {
     let element = document.head.querySelector(selector)
@@ -44,6 +44,7 @@ function SEO(props) {
         setMetaAttribute('meta[property="og:url"]', ['property', 'og:url'], url)
         setMetaAttribute('meta[property="og:type"]', ['property', 'og:type'], 'website')
         setMetaAttribute('meta[property="og:image"]', ['property', 'og:image'], defaultImage)
+        setMetaAttribute('meta[property="og:image:alt"]', ['property', 'og:image:alt'], 'Roger Belman portfolio profile photo')
         setMetaAttribute('meta[name="twitter:card"]', ['name', 'twitter:card'], 'summary_large_image')
         setMetaAttribute('meta[name="twitter:title"]', ['name', 'twitter:title'], title)
         setMetaAttribute('meta[name="twitter:description"]', ['name', 'twitter:description'], props.description)

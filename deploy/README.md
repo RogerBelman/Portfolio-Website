@@ -15,8 +15,10 @@ Install the required packages:
 
 ```bash
 sudo apt update
-sudo apt install -y nginx git nodejs npm certbot python3-certbot-nginx
+sudo apt install -y nginx certbot python3-certbot-nginx
 ```
+
+Node.js and npm are not required on the VPS for the current workflow because the app is built locally and copied to the server.
 
 Create the web root:
 
@@ -58,22 +60,37 @@ Choose the redirect option so all traffic resolves to one canonical HTTPS domain
 
 ## Deploy Updates
 
-From the project directory:
+From the local project directory:
 
-```bash
+```powershell
 npm install
 npm run build
 ```
 
-Copy the built files to the web root:
+Clear the current web root on the VPS:
 
-```bash
-sudo rsync -av --delete dist/ /var/www/rogerbelman.com/
+```powershell
+ssh root@YOUR_DROPLET_IP "rm -rf /var/www/rogerbelman.com/*"
 ```
 
-Reload Nginx if the server config changed:
+Copy the new build output to the VPS:
 
-```bash
-sudo nginx -t
-sudo systemctl reload nginx
+```powershell
+scp -r dist/* root@YOUR_DROPLET_IP:/var/www/rogerbelman.com/
+```
+
+Nginx does not need to be reloaded for normal site updates. Reload it only if the Nginx config changed.
+
+## Rebuilt VPS SSH Warning
+
+If the droplet is rebuilt and SSH reports that the remote host identification changed, remove the old local key:
+
+```powershell
+ssh-keygen -R YOUR_DROPLET_IP
+```
+
+Then reconnect and accept the new host key:
+
+```powershell
+ssh root@YOUR_DROPLET_IP
 ```
