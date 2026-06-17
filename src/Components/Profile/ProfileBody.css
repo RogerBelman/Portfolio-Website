@@ -9,7 +9,11 @@
 }
 
 .ProfileBody h1 {
-    margin: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ProfileBody h2 {
+    margin-bottom: 2rem;
 }
 
 .Intro {

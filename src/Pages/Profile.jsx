@@ -9,7 +9,7 @@ function Profile(){
         <>
             <SEO
                 title="Roger Belman"
-                description="Roger Belman's portfolio homepage, featuring his software engineering profile, resume, and contact links."
+                description="Roger Belman is a software engineering student at The University of Texas at Dallas building practical web applications with React and modern development tools."
                 path="/"
             />
             <Header></Header>

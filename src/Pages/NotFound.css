@@ -1,0 +1,52 @@
+.NotFound {
+    display: flex;
+    min-height: 55vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.NotFound-code {
+    color: hsl(208, 100%, 45%);
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.NotFound h1 {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+}
+
+.NotFound-copy {
+    max-width: 42rem;
+    margin: 1.25rem 0rem 1.75rem;
+    color: hsl(0, 0%, 78%);
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.NotFound-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media (max-width: 500px) {
+    .NotFound {
+        min-height: 45vh;
+        padding: 3rem 0rem;
+    }
+
+    .NotFound-code {
+        font-size: 4rem;
+    }
+
+    .NotFound h1 {
+        font-size: 2rem;
+    }
+}

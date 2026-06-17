@@ -7,13 +7,14 @@ function ProfileBody(){
 
     return(
         <div className="ProfileBody">
-            <h2>Welcome To My Portfolio Website Built Using React</h2>
-            <h1>Profile</h1>
+            <h1>Roger Belman</h1>
+            <h2>Software Engineering Student at The University of Texas at Dallas</h2>
             <Headshot></Headshot>
-            <p className="Intro">Hi, I&apos;m Roger Belman! I&apos;m a passionate
+            <p className="Intro">Roger Belman is a
                 <b> Software Engineering Student</b> at the
-                <b> University of Texas at Dallas</b>, looking to expand my
-                <b> Software Development Skills</b>. Feel free to explore my projects, learn more about my experiences, or get in touch.
+                <b> University of Texas at Dallas</b> building practical web applications with
+                <b> React</b>, modern development tools, and hands-on deployment experience.
+                Explore his projects, experience, resume, and contact links.
             </p>
             <Socials></Socials>
             <div className="Resume">

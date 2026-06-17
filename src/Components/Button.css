@@ -3,10 +3,12 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    background-color: hsl(0, 0%, 8%);
+    min-height: 3rem;
+    padding: .65rem 1.25rem;
+    background-color: hsl(208, 85%, 17%);
     font-family: 'Orbitron';
     color: hsl(0, 0%, 100%);
-    border: .25rem solid hsl(208, 100%, 30%);
+    border: .125rem solid hsl(208, 85%, 42%);
     border-radius: .5rem;
     font-size: 1.25rem;
     width: 12.5rem;
@@ -14,17 +16,25 @@
     font-weight: bold;
     margin-top: .25rem;
     text-decoration: none;
-    transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+    box-shadow: 0rem .25rem 0rem hsl(208, 85%, 8%), 0rem 0rem .75rem hsla(208, 85%, 35%, .18);
+    transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
 .Button:hover,
 .Button:focus-visible {
-    background-color: hsl(208, 100%, 25%);
-    border-color: hsl(208, 100%, 45%);
-    box-shadow: 0rem .25rem 0rem hsl(208, 100%, 15%);
-    transform: translateY(-.0625rem);
+    background-color: hsl(208, 85%, 25%);
+    border-color: hsl(208, 85%, 58%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0rem .3rem 0rem hsl(208, 85%, 9%), 0rem 0rem 1rem hsla(208, 85%, 45%, .28);
+    transform: translateY(-.125rem);
+}
+
+.Button:focus-visible {
+    outline: .15rem solid hsl(208, 85%, 68%);
+    outline-offset: .2rem;
 }
 
 .Button:active {
-    transform: translateY(.0625rem);
+    box-shadow: 0rem .12rem 0rem hsl(208, 85%, 8%), 0rem 0rem .5rem hsla(208, 85%, 35%, .2);
+    transform: translateY(.12rem);
 }
