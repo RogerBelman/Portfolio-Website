@@ -1,5 +1,5 @@
-import ExperienceBody from '../Components/Experience/ExperienceBody.jsx'
-import SEO from '../Components/SEO.jsx'
+import ExperienceBody from '../components/experience/ExperienceBody.jsx'
+import SEO from '../components/SEO.jsx'
 
 function Experience(){
 

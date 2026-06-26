@@ -1,5 +1,5 @@
 import experiences from '../../data/experiences.js'
-import AnExperience from './AnExperience'
+import ExperienceCard from './ExperienceCard.jsx'
 import './ExperienceBody.css'
 
 function ExperienceBody(){
@@ -8,7 +8,7 @@ function ExperienceBody(){
         <div className="ExperienceBody">
             <h1>Experience</h1>
             {experiences.map((experience) => (
-                <AnExperience key={experience.company} {...experience} />
+                <ExperienceCard key={experience.company} {...experience} />
             ))}
         </div>
     );

@@ -1,5 +1,5 @@
-import Button from '../Components/Button.jsx'
-import SEO from '../Components/SEO.jsx'
+import Button from '../components/Button.jsx'
+import SEO from '../components/SEO.jsx'
 import './NotFound.css'
 
 function NotFound(){

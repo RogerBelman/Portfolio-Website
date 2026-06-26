@@ -1,5 +1,5 @@
-import ProfileBody from '../Components/Profile/ProfileBody.jsx'
-import SEO from '../Components/SEO.jsx'
+import ProfileBody from '../components/profile/ProfileBody.jsx'
+import SEO from '../components/SEO.jsx'
  
 function Profile(){
 

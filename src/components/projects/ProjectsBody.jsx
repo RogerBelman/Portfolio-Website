@@ -1,5 +1,5 @@
 import projects from '../../data/projects.js'
-import AProject from './AProject.jsx'
+import ProjectCard from './ProjectCard.jsx'
 import './ProjectsBody.css'
 
 function ProjectsBody(){
@@ -8,7 +8,7 @@ function ProjectsBody(){
         <div className="ProjectsBody">
             <h1>Projects</h1>
             {projects.map((project) => (
-                <AProject key={project.name} {...project} />
+                <ProjectCard key={project.name} {...project} />
             ))}
         </div>
     );

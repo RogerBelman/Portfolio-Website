@@ -1,4 +1,4 @@
-.AnExperience {
+.ExperienceCard {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,16 +14,16 @@
     transition: border-color 160ms ease;
 }
 
-.AnExperience:hover,
-.AnExperience:focus-within {
+.ExperienceCard:hover,
+.ExperienceCard:focus-within {
     border-color: hsl(208, 100%, 25%);
 }
 
-.AnExperience h3 {
+.ExperienceCard h3 {
     font-weight: normal;
 }
 
-.AnExperience p {
+.ExperienceCard p {
     margin: .25rem;
 }
 
@@ -31,7 +31,7 @@
     color: hsl(0, 0%, 28%);
 }
 
-.AnExperience .description-list {
+.ExperienceCard .description-list {
     margin: .25rem;
     padding: 0rem;
     list-style: none;
@@ -39,11 +39,11 @@
     text-align: center;
 }
 
-.AnExperience .description-list li::before {
+.ExperienceCard .description-list li::before {
     content: "- ";
 }
 
-.AnExperience .Button {
+.ExperienceCard .Button {
     width: 16rem;
     max-width: 100%;
     white-space: nowrap;

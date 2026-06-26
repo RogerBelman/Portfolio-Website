@@ -1,5 +1,5 @@
-import ProjectsBody from '../Components/Projects/ProjectsBody.jsx'
-import SEO from '../Components/SEO.jsx'
+import ProjectsBody from '../components/projects/ProjectsBody.jsx'
+import SEO from '../components/SEO.jsx'
 
 function Projects(){
 

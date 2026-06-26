@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import Button from '../Button'
-import './AProject.css'
+import './ProjectCard.css'
 
-function AProject(props){
+function ProjectCard(props){
 
     return(
-        <div className="AProject">
+        <div className="ProjectCard">
             <h2>{props.name}</h2>
             <h3>{props.skills}</h3>
             <ul className="description-list">
@@ -19,7 +19,7 @@ function AProject(props){
     );
 }
 
-AProject.propTypes = {
+ProjectCard.propTypes = {
     name: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     image: PropTypes.string,
@@ -27,4 +27,4 @@ AProject.propTypes = {
     description: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
-export default AProject
+export default ProjectCard

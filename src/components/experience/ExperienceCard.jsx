@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import Button from '../Button'
-import './AnExperience.css'
+import './ExperienceCard.css'
 
-function AnExperience(props){
+function ExperienceCard(props){
 
     return(
-        <div className='AnExperience'>
+        <div className="ExperienceCard">
             <h2>{props.company}</h2>
             <h3>{props.position}</h3>
             <p className="grey">{props.skills}</p>
@@ -19,7 +19,7 @@ function AnExperience(props){
     );
 }
 
-AnExperience.propTypes = {
+ExperienceCard.propTypes = {
     company: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
@@ -27,4 +27,4 @@ AnExperience.propTypes = {
     description: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
-export default AnExperience
+export default ExperienceCard

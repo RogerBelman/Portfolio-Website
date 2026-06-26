@@ -1,9 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import SiteLayout from './layout/SiteLayout.jsx'
-import Profile from './Pages/Profile.jsx'
-import Projects from './Pages/Projects.jsx'
-import Experience from './Pages/Experience.jsx'
-import NotFound from './Pages/NotFound.jsx'
+import Profile from './pages/Profile.jsx'
+import Projects from './pages/Projects.jsx'
+import Experience from './pages/Experience.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 
 function App() {
