@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import Button from '../Button'
+import Button from '../Button.jsx'
 import './ExperienceCard.css'
 
 function ExperienceCard(props){
 
     return(
-        <div className="ExperienceCard">
+        <div className="ExperienceCard ContentCard">
             <h2>{props.company}</h2>
             <h3>{props.position}</h3>
             <p className="grey">{props.skills}</p>

@@ -4,21 +4,95 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 1.5rem;
-    margin-bottom: 3rem;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
 }
 
 .ProfileBody h1 {
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
 }
 
 .ProfileBody h2 {
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
 }
 
 .Intro {
     width: 80%;
-    margin: 2.5rem;
-    padding: 0rem;
+    padding: 2.5rem 0rem;
     font-size: 1.25em;
+}
+
+.headshot-frame {
+    display: inline-flex;
+    padding: .25rem;
+    border: .125rem solid hsl(208, 100%, 30%);
+    border-radius: 50%;
+    transition: border-color 160ms ease;
+}
+
+.headshot-frame:hover {
+    border-color: hsl(208, 100%, 45%);
+}
+
+.headshot {
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.Resume {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 4rem;
+}
+
+.resume-placement {
+    display: flex;
+    width: min(100%, 36rem);
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem;
+    background-color: hsl(0, 0%, 4%);
+    border: .125rem solid hsl(0, 0%, 28%);
+    border-radius: .5rem;
+    transition: border-color 160ms ease;
+}
+
+.resume-placement:hover,
+.resume-placement:focus-within {
+    border-color: hsl(208, 100%, 25%);
+}
+
+.resume-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .25rem;
+    text-align: left;
+}
+
+.resume-copy p {
+    color: hsl(0, 0%, 70%);
+}
+
+.resume-placement .Button {
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .resume-placement {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .resume-copy {
+        align-items: center;
+        text-align: center;
+    }
 }

@@ -3,5 +3,26 @@
     gap: 2rem;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.social-link {
+    display: inline-flex;
+    width: 5.5rem;
+    border-radius: .5rem;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+    transform: translateY(-.125rem);
+    box-shadow: 0rem .35rem 0rem hsl(208, 100%, 25%);
+    outline: none;
+}
+
+.social-image {
+    width: 5.5rem;
+    height: 5.5rem;
+    cursor: pointer;
+    border-radius: .5rem;
 }

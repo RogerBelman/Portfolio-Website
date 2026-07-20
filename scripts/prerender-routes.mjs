@@ -4,10 +4,6 @@ import { getRouteTitle, getRouteUrl, prerenderRouteKeys, routeMeta } from '../sr
 
 const distDir = 'dist'
 
-function replaceTag(html, pattern, replacement) {
-    return html.replace(pattern, replacement)
-}
-
 function routeHtml(template, route) {
     const title = getRouteTitle(route)
     const url = getRouteUrl(route)
@@ -21,7 +17,7 @@ function routeHtml(template, route) {
         [/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${title}" />`],
         [/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${route.description}" />`],
         [/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${url}" />`],
-    ].reduce((html, [pattern, replacement]) => replaceTag(html, pattern, replacement), template)
+    ].reduce((html, [pattern, replacement]) => html.replace(pattern, replacement), template)
 }
 
 function outputPath(route) {

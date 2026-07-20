@@ -1,13 +1,24 @@
 const experiences = [
     {
         company: 'AB Drywall Systems LLC',
-        position: 'Construction Delivery & Labor',
+        position: 'Construction Laborer & Delivery Assistant | Web Developer',
         link: 'https://www.abdrywallsystemsllc.com/',
-        skills: 'English, Spanish, Physical Labor, Transportation, Communication',
+        skills: 'English, Spanish, Field Operations, Web Development, React, Deployment',
         description: [
-            'Delivered construction materials to job sites.',
-            'Assisted mechanics with on-site construction tasks.',
-            'Translated conversations between mechanics and supervisors in English and Spanish.',
+            'Delivered construction materials to job sites, assisted mechanics with field tasks, and supported daily job-site operations.',
+            'Served as a bilingual English/Spanish interpreter between mechanics, supervisors, and other team members.',
+            'Designed and deployed the company website listed under Projects.',
+        ],
+    },
+    {
+        company: "Sam's Club",
+        position: 'Club Pickup Associate',
+        link: 'https://careers.walmart.com/us/en/sams-home',
+        skills: 'Customer Service, Order Fulfillment, Accuracy, Retail Operations',
+        description: [
+            'Fulfilled online pickup orders, staged merchandise, assisted customers, and maintained order accuracy in a high-volume retail environment.',
+            'Coordinated item substitutions, order updates, and pickup timing to keep customer orders moving efficiently.',
+            'Worked with team members across departments to locate merchandise and resolve order issues.',
         ],
     },
     {
@@ -18,6 +29,7 @@ const experiences = [
         description: [
             'Supported a mechanic with physical construction tasks.',
             'Worked in a collaborative, bilingual job site environment.',
+            'Helped load, move, and organize materials while maintaining safe and efficient work areas.',
         ],
     },
     {

@@ -14,7 +14,6 @@
     width: 12.5rem;
     cursor: pointer;
     font-weight: bold;
-    margin-top: .25rem;
     text-decoration: none;
     box-shadow: 0rem .25rem 0rem hsl(208, 85%, 8%), 0rem 0rem .75rem hsla(208, 85%, 35%, .18);
     transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;

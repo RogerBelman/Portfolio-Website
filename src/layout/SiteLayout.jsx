@@ -1,15 +1,16 @@
 import { Outlet } from 'react-router-dom'
-import Header from '../components/Header.jsx'
-import Footer from '../components/Footer.jsx'
+import Navbar from '../components/Navbar.jsx'
 
 function SiteLayout() {
     return (
         <>
-            <Header></Header>
-            <main id="main-content">
+            <Navbar></Navbar>
+            <main id="main-content" className="site-content">
                 <Outlet></Outlet>
             </main>
-            <Footer></Footer>
+            <footer>
+                <p>Last Updated July 2026</p>
+            </footer>
         </>
     )
 }

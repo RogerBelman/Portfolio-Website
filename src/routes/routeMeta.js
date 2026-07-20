@@ -6,12 +6,12 @@ export const routeMeta = {
     profile: {
         path: '/',
         title: siteName,
-        description: 'Roger Belman is a software engineering student at The University of Texas at Dallas building practical web applications with React and modern development tools.',
+        description: 'Roger Belman is a software engineering graduate from The University of Texas at Dallas focused on React websites, maintainable software, SEO, and deployment.',
     },
     projects: {
         path: '/projects',
         title: 'Projects',
-        description: 'Explore software engineering projects by Roger Belman, including React, deployment, and portfolio development work.',
+        description: 'Explore software engineering projects by Roger Belman, including React websites, technical SEO, deployment, and machine learning capstone work.',
     },
     experience: {
         path: '/experience',
