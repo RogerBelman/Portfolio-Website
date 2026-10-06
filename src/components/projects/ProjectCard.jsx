@@ -7,6 +7,7 @@ function ProjectCard(props){
     return(
         <div className="ProjectCard ContentCard">
             <h2>{props.name}</h2>
+            {props.period && <p className="content-details">{props.period}</p>}
             <h3>{props.skills}</h3>
             <ul className="description-list">
                 {props.description.map((item) => (
@@ -21,6 +22,7 @@ function ProjectCard(props){
 
 ProjectCard.propTypes = {
     name: PropTypes.string.isRequired,
+    period: PropTypes.string,
     link: PropTypes.string,
     linkText: PropTypes.string,
     image: PropTypes.string,

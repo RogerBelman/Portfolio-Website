@@ -76,6 +76,11 @@ footer {
     font-weight: normal;
 }
 
+.ContentCard .content-details {
+    color: hsl(0, 0%, 70%);
+    line-height: 1.6;
+}
+
 .ContentCard .description-list {
     padding: .25rem;
     list-style: none;

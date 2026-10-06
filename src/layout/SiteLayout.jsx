@@ -9,7 +9,7 @@ function SiteLayout() {
                 <Outlet></Outlet>
             </main>
             <footer>
-                <p>Last Updated July 2026</p>
+                <p>Last Updated October 2026</p>
             </footer>
         </>
     )

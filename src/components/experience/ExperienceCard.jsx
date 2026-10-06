@@ -8,6 +8,11 @@ function ExperienceCard(props){
         <div className="ExperienceCard ContentCard">
             <h2>{props.company}</h2>
             <h3>{props.position}</h3>
+            {(props.period || props.location) && (
+                <p className="content-details">
+                    {[props.period, props.location].filter(Boolean).join(' | ')}
+                </p>
+            )}
             <p className="grey">{props.skills}</p>
             <ul className="description-list white">
                 {props.description.map((item) => (
@@ -22,6 +27,8 @@ function ExperienceCard(props){
 ExperienceCard.propTypes = {
     company: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
+    period: PropTypes.string,
+    location: PropTypes.string,
     link: PropTypes.string.isRequired,
     skills: PropTypes.string.isRequired,
     description: PropTypes.arrayOf(PropTypes.string).isRequired,
