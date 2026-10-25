@@ -3,7 +3,8 @@ const projects = [
         name: 'Workout Tracker Web Application',
         skills: 'Java, Spring Boot, React, TypeScript, PostgreSQL, Spring Data JPA, Neon, Docker, Flyway, REST APIs, JUnit, Mockito, MockMvc',
         period: 'Aug 2026 - Present',
-        link: null,
+        link: 'https://github.com/RogerBelman/Workout-Tracker-Webapp',
+        linkText: 'GitHub Link',
         description: [
             'Built a full-stack workout tracking application with a React/TypeScript frontend, Spring Boot REST API, and PostgreSQL database for exercise management, workout logging, history, and progress analytics.',
             'Designed a layered controller-service-repository backend with DTO-based API contracts, request validation, centralized exception handling, and Spring Data JPA persistence.',
