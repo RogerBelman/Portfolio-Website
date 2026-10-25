@@ -1,0 +1,130 @@
+name: Deploy production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-production
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out deployment commit
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          package-manager-cache: false
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+
+      - name: Upload production build
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-dist-${{ github.sha }}
+          path: dist/
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: https://rogerbelman.com
+    env:
+      SSH_DIR: ${{ runner.temp }}/portfolio-ssh
+    steps:
+      - name: Download production build
+        uses: actions/download-artifact@v4
+        with:
+          name: portfolio-dist-${{ github.sha }}
+          path: dist/
+
+      - name: Prepare SSH credentials
+        shell: bash
+        env:
+          PORTFOLIO_DEPLOY_HOST: ${{ secrets.PORTFOLIO_DEPLOY_HOST }}
+          PORTFOLIO_DEPLOY_USER: ${{ secrets.PORTFOLIO_DEPLOY_USER }}
+          PORTFOLIO_DEPLOY_KEY: ${{ secrets.PORTFOLIO_DEPLOY_KEY }}
+          PORTFOLIO_KNOWN_HOSTS: ${{ secrets.PORTFOLIO_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          for variable in PORTFOLIO_DEPLOY_HOST PORTFOLIO_DEPLOY_USER PORTFOLIO_DEPLOY_KEY PORTFOLIO_KNOWN_HOSTS; do
+            if [[ -z "${!variable}" ]]; then
+              echo "A required production deployment secret is missing."
+              exit 1
+            fi
+          done
+          umask 077
+          mkdir -p "$SSH_DIR"
+          chmod 700 "$SSH_DIR"
+          printf '%s\n' "$PORTFOLIO_DEPLOY_KEY" > "$SSH_DIR/key"
+          printf '%s\n' "$PORTFOLIO_KNOWN_HOSTS" > "$SSH_DIR/known_hosts"
+          {
+            printf 'Host portfolio-production\n'
+            printf '  HostName %s\n' "$PORTFOLIO_DEPLOY_HOST"
+            printf '  User %s\n' "$PORTFOLIO_DEPLOY_USER"
+            printf '  IdentityFile "%s/key"\n' "$SSH_DIR"
+            printf '  UserKnownHostsFile "%s/known_hosts"\n' "$SSH_DIR"
+            printf '  GlobalKnownHostsFile /dev/null\n'
+            printf '  StrictHostKeyChecking yes\n'
+            printf '  BatchMode yes\n'
+            printf '  IdentitiesOnly yes\n'
+            printf '  ConnectTimeout 15\n'
+            printf '  LogLevel ERROR\n'
+          } > "$SSH_DIR/config"
+          chmod 600 "$SSH_DIR/key" "$SSH_DIR/known_hosts" "$SSH_DIR/config"
+
+      - name: Upload and activate release
+        shell: bash
+        run: |
+          set -euo pipefail
+          release="/home/portfolio-deploy/releases/${GITHUB_SHA}/"
+          if ! ssh -F "$SSH_DIR/config" portfolio-production "mkdir -p '$release'" > /dev/null 2>&1; then
+            echo "Could not prepare the production release directory."
+            exit 1
+          fi
+          export RSYNC_RSH="ssh -F '$SSH_DIR/config'"
+          if ! rsync -a --quiet dist/ "portfolio-production:$release" > /dev/null 2>&1; then
+            echo "Production artifact upload failed."
+            exit 1
+          fi
+          if ! ssh -F "$SSH_DIR/config" portfolio-production "sudo -n /usr/local/sbin/deploy-portfolio ${GITHUB_SHA}" > /dev/null 2>&1; then
+            echo "Production release activation failed."
+            exit 1
+          fi
+
+      - name: Verify production website
+        shell: bash
+        run: |
+          curl --fail --silent --location --output /dev/null \
+            --proto '=https' --proto-redir '=https' \
+            --connect-timeout 10 --max-time 30 \
+            --retry 5 --retry-delay 5 --retry-all-errors \
+            https://rogerbelman.com || {
+              echo "Production website verification failed."
+              exit 1
+            }
+
+      - name: Remove temporary SSH material
+        if: ${{ always() }}
+        shell: bash
+        run: rm -rf -- "$SSH_DIR"
