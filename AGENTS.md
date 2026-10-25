@@ -17,6 +17,14 @@ Before modifying files:
 4. Create a dedicated feature branch; never commit directly to `main`.
 5. If existing work, conflicts, or divergence would prevent this, stop and report the condition instead of overwriting anything.
 
+## Cloud preview
+
+- For user-facing website changes made in Codex Cloud, run the normal validation and then start the built site with `npm run preview -- --host 0.0.0.0`.
+- When the cloud environment provides a private preview or **View changes** option, explicitly offer it to the repository owner before the pull request is merged so the changes can be reviewed on a phone.
+- Keep the preview private. Do not publish a temporary public deployment or expose credentials, environment variables, or private infrastructure details.
+- If a private preview is unavailable, say so clearly and provide screenshots when browser tooling supports them.
+- A preview is only for review; it does not replace pull-request CI, production approval, or live-site verification.
+
 ## Production workflow
 
 - Before preparing, running, or diagnosing a deployment, read [`docs/production-workflow.md`](docs/production-workflow.md) and inspect the current files under `.github/workflows/`.
