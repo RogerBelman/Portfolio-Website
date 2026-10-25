@@ -103,7 +103,7 @@ jobs:
             exit 1
           fi
           export RSYNC_RSH="ssh -F '$SSH_DIR/config'"
-          if ! rsync -a --quiet dist/ "portfolio-production:$release" > /dev/null 2>&1; then
+          if ! rsync -rlt --delete --chmod=D750,F640 --quiet dist/ "portfolio-production:$release" > /dev/null 2>&1; then
             echo "Production artifact upload failed."
             exit 1
           fi
