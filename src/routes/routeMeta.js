@@ -6,8 +6,8 @@ export const routeMeta = {
     profile: {
         path: '/',
         title: siteName,
-        description: 'Roger Belman is a UT Dallas software engineering graduate building full-stack applications with Java, Spring Boot, React, TypeScript, and PostgreSQL.',
-        lastmod: '2026-10-05',
+        description: 'Roger Belman is a software developer who enjoys building practical, reliable applications and thoughtful user experiences.',
+        lastmod: '2026-10-06',
         changefreq: 'monthly',
         priority: '1.0',
     },
