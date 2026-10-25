@@ -49,8 +49,6 @@ jobs:
     environment:
       name: production
       url: https://rogerbelman.com
-    env:
-      SSH_DIR: ${{ runner.temp }}/portfolio-ssh
     steps:
       - name: Download production build
         uses: actions/download-artifact@v4
@@ -67,6 +65,8 @@ jobs:
           PORTFOLIO_KNOWN_HOSTS: ${{ secrets.PORTFOLIO_KNOWN_HOSTS }}
         run: |
           set -euo pipefail
+          SSH_DIR="${RUNNER_TEMP}/portfolio-ssh"
+          printf 'SSH_DIR=%s\n' "$SSH_DIR" >> "$GITHUB_ENV"
           for variable in PORTFOLIO_DEPLOY_HOST PORTFOLIO_DEPLOY_USER PORTFOLIO_DEPLOY_KEY PORTFOLIO_KNOWN_HOSTS; do
             if [[ -z "${!variable}" ]]; then
               echo "A required production deployment secret is missing."
@@ -127,4 +127,4 @@ jobs:
       - name: Remove temporary SSH material
         if: ${{ always() }}
         shell: bash
-        run: rm -rf -- "$SSH_DIR"
+        run: rm -rf -- "${RUNNER_TEMP}/portfolio-ssh"
