@@ -1,3 +1,12 @@
+.project-heading {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid hsl(0, 0%, 20%);
+}
+
 .Image {
     width: 90%;
     height: auto;

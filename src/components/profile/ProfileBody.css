@@ -8,18 +8,52 @@
     padding-bottom: 3rem;
 }
 
-.ProfileBody h1 {
-    padding-bottom: 1rem;
-}
-
-.ProfileBody h2 {
-    padding-bottom: 2rem;
-}
-
-.Intro {
+.profile-introduction {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 3rem;
     width: 80%;
-    padding: 2.5rem 0rem;
-    font-size: 1.25em;
+    max-width: 64rem;
+    padding: 2rem 0 1rem;
+    text-align: left;
+}
+
+.profile-copy {
+    min-width: 0;
+}
+
+.profile-copy h1 {
+    line-height: 1.3;
+}
+
+.profile-role {
+    padding-top: .5rem;
+    line-height: 1.5;
+}
+
+.profile-intro {
+    max-width: 48ch;
+    padding: 1.5rem 0;
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+.profile-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile-actions .socials-placement {
+    padding-top: 0;
+    gap: 1rem;
+}
+
+.profile-actions .Button {
+    max-width: 100%;
+    min-height: 3.5rem;
 }
 
 .technical-skills {
@@ -33,7 +67,7 @@
     padding-bottom: 1.5rem;
 }
 
-.technical-skills dl {
+.skill-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: 1fr;
@@ -50,21 +84,18 @@
     background-color: hsl(0, 0%, 4%);
     border: .125rem solid hsl(0, 0%, 22%);
     border-radius: .5rem;
-    transition: border-color 160ms ease;
 }
 
-.skill-category:hover {
-    border-color: hsl(208, 100%, 30%);
+.skill-category:last-child {
+    grid-column: 1 / -1;
 }
 
-.technical-skills dt {
-    font-weight: bold;
-    color: hsl(208, 65%, 65%);
+.skill-category h3 {
     padding-bottom: 1rem;
     border-bottom: 1px solid hsl(0, 0%, 20%);
 }
 
-.technical-skills dd {
+.skill-items {
     margin: 0;
     display: flex;
     flex: 1;
@@ -97,78 +128,49 @@
 
 .headshot-frame {
     display: inline-flex;
+    justify-self: center;
     padding: .25rem;
     border: .125rem solid hsl(208, 100%, 30%);
     border-radius: 50%;
-    transition: border-color 160ms ease;
-}
-
-.headshot-frame:hover {
-    border-color: hsl(208, 100%, 45%);
 }
 
 .headshot {
-    width: 13rem;
-    height: 13rem;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.Resume {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding-top: 4rem;
-}
+@media (max-width: 900px) {
+    .profile-introduction {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+        text-align: center;
+    }
 
-.resume-placement {
-    display: flex;
-    width: min(100%, 36rem);
-    box-sizing: border-box;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    padding: 1.25rem;
-    background-color: hsl(0, 0%, 4%);
-    border: .125rem solid hsl(0, 0%, 28%);
-    border-radius: .5rem;
-    transition: border-color 160ms ease;
-}
+    .profile-intro {
+        margin: 0 auto;
+    }
 
-.resume-placement:hover,
-.resume-placement:focus-within {
-    border-color: hsl(208, 100%, 25%);
-}
+    .profile-actions {
+        justify-content: center;
+    }
 
-.resume-copy {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: .25rem;
-    text-align: left;
-}
-
-.resume-copy h2 {
-    padding-bottom: 0;
-}
-
-.resume-copy p {
-    color: hsl(0, 0%, 70%);
-}
-
-.resume-placement .Button {
-    flex-shrink: 0;
+    .technical-skills {
+        width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
-    .technical-skills dl {
+    .skill-grid {
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
         gap: 1rem;
     }
 
-    .technical-skills {
+    .technical-skills,
+    .profile-introduction {
         width: 100%;
     }
 
@@ -176,14 +178,18 @@
         padding: 1.25rem;
     }
 
-    .resume-placement {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .profile-introduction {
+        padding-top: 1rem;
+        gap: 1.5rem;
     }
 
-    .resume-copy {
-        align-items: center;
-        text-align: center;
+    .profile-actions {
+        flex-direction: column;
+    }
+
+    .headshot {
+        width: min(13rem, 55vw);
+        height: auto;
+        aspect-ratio: 1;
     }
 }

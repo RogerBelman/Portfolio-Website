@@ -20,7 +20,7 @@ body {
     width: 100%;
     max-width: 90rem;
     margin: 0rem auto;
-    padding: 0rem 3rem;
+    padding: 0 clamp(1rem, 4vw, 3rem);
     box-sizing: border-box;
 }
 
@@ -57,23 +57,27 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: .5rem;
+    gap: 1rem;
     width: 80%;
     box-sizing: border-box;
-    padding: 1.25rem;
+    padding: clamp(1.25rem, 3vw, 2.5rem);
     background-color: hsl(0, 0%, 4%);
     border: .125rem solid hsl(0, 0%, 28%);
     border-radius: .5rem;
-    transition: border-color 160ms ease;
-}
-
-.ContentCard:hover,
-.ContentCard:focus-within {
-    border-color: hsl(208, 100%, 25%);
 }
 
 .ContentCard h3 {
     font-weight: normal;
+    line-height: 1.6;
+}
+
+.ContentCard h2 {
+    line-height: 1.35;
+}
+
+.ContentCard h2,
+.ContentCard h3 {
+    overflow-wrap: anywhere;
 }
 
 .ContentCard .content-details {
@@ -82,10 +86,17 @@ footer {
 }
 
 .ContentCard .description-list {
-    padding: .25rem;
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    max-width: 68ch;
+    box-sizing: border-box;
+    margin: .5rem 0;
+    padding-left: 0;
     list-style: none;
-    line-height: 1.5rem;
+    line-height: 1.75;
     text-align: center;
+    overflow-wrap: anywhere;
 }
 
 .ContentCard .description-list li::before {
@@ -95,15 +106,15 @@ footer {
 h1 {
     margin: 0rem;
     padding: 0rem;
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 4vw, 2rem);
     font-weight: bold;
 }
 
 h2 {
     margin: 0rem;
     padding: 0rem;
-    color: hsl(0, 0%, 35%);
-    font-size: 2rem;
+    color: hsl(0, 0%, 25%);
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: bold;
 }
 
@@ -120,26 +131,8 @@ p {
     padding: 0rem;
 }
 
-@media (max-width: 600px) {
-    html {
-        font-size: 85%;
-    }
-}
-
-@media (max-width: 500px) {
-    html {
-        font-size: 70%;
-    }
-}
-
-@media (max-width: 420px) {
-    html {
-        font-size: 60%;
-    }
-}
-
-@media (max-width: 360px) {
-    html {
-        font-size: 50%;
+@media (max-width: 900px) {
+    .ContentCard {
+        width: 100%;
     }
 }
