@@ -53,20 +53,20 @@
 
 .site-name {
     padding: 0rem;
-    font-size: clamp(1.25rem, calc(.875rem + 1.875vw), 2.25rem);
+    font-size: clamp(1.52rem, calc(.875rem + 1.875vw), 2.25rem);
     font-weight: bold;
 }
 
 .text-content h3 {
     padding-bottom: .5rem;
-    font-size: clamp(.8rem, calc(.6rem + 1vw), 1.25rem);
+    font-size: clamp(.97rem, calc(.6rem + 1vw), 1.25rem);
 }
 
 .site-header nav {
     display: flex;
     gap: clamp(.25rem, calc(-.5rem + 2vw), 2rem);
     font-weight: bold;
-    font-size: clamp(.875rem, calc(.55rem + 1.6vw), 1.75rem);
+    font-size: clamp(1.0625rem, calc(.55rem + 1.6vw), 1.75rem);
 }
 
 .site-header nav a {
