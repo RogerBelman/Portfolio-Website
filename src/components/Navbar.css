@@ -14,6 +14,12 @@
     transform: translateY(-100%);
 }
 
+.site-header:focus-within {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+}
+
 .site-header-inner {
     width: 100%;
     max-width: 90rem;
@@ -21,8 +27,9 @@
     padding: 0rem 3rem;
     box-sizing: border-box;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center; 
+    gap: 1rem;
 }
 
 .header-content {
@@ -33,8 +40,9 @@
 }
 
 .site-logo {
-    width: 7rem;
-    height: 7rem;
+    width: clamp(3.5rem, calc(2.25rem + 6.25vw), 7rem);
+    height: clamp(3.5rem, calc(2.25rem + 6.25vw), 7rem);
+    flex-shrink: 0;
 }
 
 .text-content {
@@ -45,38 +53,54 @@
 
 .site-name {
     padding: 0rem;
-    font-size: 2.25rem;
+    font-size: clamp(1.25rem, calc(.875rem + 1.875vw), 2.25rem);
     font-weight: bold;
 }
 
 .text-content h3 {
     padding-bottom: .5rem;
+    font-size: clamp(.8rem, calc(.6rem + 1vw), 1.25rem);
 }
 
 .site-header nav {
     display: flex;
-    gap: 2rem;
+    gap: clamp(.25rem, calc(-.5rem + 2vw), 2rem);
     font-weight: bold;
-    font-size: 1.75rem;
+    font-size: clamp(.875rem, calc(.55rem + 1.6vw), 1.75rem);
 }
 
 .site-header nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    box-sizing: border-box;
     padding: .25rem .4rem;
     color: hsl(0, 0%, 100%);
     border-radius: .35rem;
     text-decoration: none;
-    transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.site-header nav a p {
+    position: relative;
+    transition: text-shadow 160ms ease;
+}
+
+.site-header nav a.active {
+    background-color: hsl(208, 70%, 19%);
+    box-shadow: inset 0rem 0rem 0rem .125rem hsl(0, 0%, 28%);
+    color: hsl(0, 0%, 100%);
+}
+
+.site-header nav a.active p {
+    text-shadow: 0 .1rem .15rem hsl(0, 0%, 0%, .65);
 }
 
 .site-header nav a:hover,
 .site-header nav a:focus-visible {
-    color: hsl(208, 100%, 65%);
-}
-
-.site-header .active {
-    background-color: hsl(208, 100%, 15%);
-    box-shadow: inset 0rem 0rem 0rem .125rem hsl(208, 100%, 35%);
-    color: hsl(208, 100%, 75%);
+    background-color: hsl(208, 70%, 19%);
+    color: hsl(0, 0%, 100%);
 }
 
 .site-header nav a:focus-visible {
@@ -84,11 +108,49 @@
     outline-offset: .2rem;
 }
 
-@media (max-width: 1100px) {
+@media (prefers-reduced-motion: reduce) {
+    .site-header,
+    .site-header nav a,
+    .site-header nav a p {
+        transition: none;
+    }
+}
+
+@media (max-width: 1200px) {
     .site-header-inner {
         flex-direction: column;
         align-items: center;
         text-align: center;
         padding-bottom: 1.5rem;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .site-header-inner {
+        padding: .5rem 1rem 1rem;
+        gap: .75rem;
+    }
+
+    .header-content {
+        gap: .75rem;
+        max-width: 100%;
+    }
+
+    .text-content {
+        min-width: 0;
+    }
+
+    .text-content h3 {
+        padding-bottom: 0;
+    }
+
+    .site-header nav {
+        width: 100%;
+    }
+
+    .site-header nav a {
+        flex: 1;
+        padding: .5rem .25rem;
     }
 }

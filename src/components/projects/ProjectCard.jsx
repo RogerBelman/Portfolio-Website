@@ -6,10 +6,12 @@ function ProjectCard(props){
 
     return(
         <div className="ProjectCard ContentCard">
-            <h2>{props.name}</h2>
-            {props.period && <p className="content-details">{props.period}</p>}
-            <h3>{props.skills}</h3>
-            <ul className="description-list">
+            <div className="project-heading">
+                <h2>{props.name}</h2>
+                {props.period && <p className="content-details">{props.period}</p>}
+                <h3>{props.skills}</h3>
+            </div>
+            <ul className="description-list" role="list">
                 {props.description.map((item) => (
                     <li key={item}>{item}</li>
                 ))}

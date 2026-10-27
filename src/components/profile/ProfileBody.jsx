@@ -5,49 +5,47 @@ import './ProfileBody.css'
 const technicalSkills = [
     { label: 'Languages', skills: ['Java', 'TypeScript', 'JavaScript', 'Python', 'C/C++', 'SQL', 'HTML/CSS', 'R'] },
     { label: 'Frontend', skills: ['React', 'React Router', 'Vite'] },
-    { label: 'Backend & Data', skills: ['Spring Boot', 'Spring Data JPA', 'PostgreSQL', 'Neon', 'Flyway', 'REST APIs', 'JUnit', 'Mockito', 'MockMvc'] },
-    { label: 'Tools/Platforms', skills: ['OpenAI Codex', 'Git', 'GitHub', 'Docker', 'Linux', 'WSL', 'Ubuntu', 'DigitalOcean', 'Nginx', 'VS Code', 'RStudio'] },
+    { label: 'Backend & Data', skills: ['Spring Boot', 'Spring Security', 'Spring Data JPA', 'PostgreSQL', 'Flyway', 'REST APIs'] },
+    { label: 'Testing', skills: ['JUnit', 'Mockito', 'MockMvc', 'Vitest', 'React Testing Library'] },
+    { label: 'Tools/Platforms', skills: ['Git', 'GitHub Actions', 'Docker Compose', 'Linux', 'DigitalOcean', 'Nginx'] },
 ]
 
 function ProfileBody(){
 
     return(
         <div className="ProfileBody">
-            <h1>Roger Belman</h1>
-            <h2>Software Developer</h2>
-            <div className="headshot-frame">
-                <img src="/images/profile-preview.jpg" className="headshot" alt="Roger Belman"></img>
-            </div>
-            <p className="Intro">
-                I enjoy building practical software that solves everyday problems.
-                I care about creating reliable, maintainable applications and thoughtful user experiences.
-                Through my projects, I continue to learn, explore new ideas, and grow as a developer.
-            </p>
-            <Socials></Socials>
+            <section className="profile-introduction" aria-labelledby="profile-heading">
+                <div className="headshot-frame">
+                    <img src="/images/profile-preview.jpg" className="headshot" alt="Roger Belman"></img>
+                </div>
+                <div className="profile-copy">
+                    <h1 id="profile-heading">Roger Belman</h1>
+                    <h2 className="profile-role">Software Developer</h2>
+                    <p className="profile-intro">
+                        I build full-stack applications and responsive websites, with a focus on
+                        reliable software and clear user experiences.
+                    </p>
+                    <div className="profile-actions">
+                        <Socials></Socials>
+                        <Button href="/Resume_Roger_Belman.pdf" target="_blank" text="View Resume"></Button>
+                    </div>
+                </div>
+            </section>
             <section className="technical-skills" aria-labelledby="technical-skills-heading">
                 <h2 id="technical-skills-heading">Technical Skills</h2>
-                <dl>
+                <div className="skill-grid">
                     {technicalSkills.map(({ label, skills }) => (
                         <div className="skill-category" key={label}>
-                            <dt>{label}</dt>
-                            <dd>
+                            <h3>{label}</h3>
+                            <div className="skill-items">
                                 <ul className="skill-list">
                                     {skills.map(skill => <li key={skill}>{skill}</li>)}
                                 </ul>
-                            </dd>
+                            </div>
                         </div>
                     ))}
-                </dl>
-            </section>
-            <div className="Resume">
-                <div className="resume-placement">
-                    <div className="resume-copy">
-                        <h2>Resume</h2>
-                        <p>View my latest resume as a PDF.</p>
-                    </div>
-                    <Button href="/Resume_Roger_Belman.pdf" target="_blank" text="View Resume"></Button>
                 </div>
-            </div>
+            </section>
         </div>
     );
 }
