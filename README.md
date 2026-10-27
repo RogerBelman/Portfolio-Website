@@ -32,6 +32,7 @@ Nginx serves the production build over HTTPS on the custom domain `rogerbelman.c
 | Routing | React Router 7 |
 | Development and builds | Vite 8 |
 | Code quality | ESLint 9 |
+| CI and deployment | GitHub Actions with protected production approval |
 | Hosting | DigitalOcean VPS running Ubuntu |
 | Web server | Nginx |
 | HTTPS | Let's Encrypt certificates managed with Certbot |
@@ -42,11 +43,13 @@ The application is a React single-page app served as static files. React Router 
 
 ```mermaid
 flowchart LR
-    Source[React source and content] --> Build[Vite build]
+    Source[React source and content] --> Build[Vite build in GitHub Actions]
     Metadata[Route metadata] --> Generate[Generate page metadata and sitemap]
     Build --> Generate
     Generate --> Dist[dist/]
-    Dist -->|Upload over SSH| Server[Nginx on DigitalOcean VPS]
+    Dist --> Approval[Protected production approval]
+    Approval --> Deploy[GitHub Actions deploys release]
+    Deploy --> Server[Nginx on DigitalOcean VPS]
     Server -->|HTTPS| Browser[Browser running React]
 ```
 
@@ -113,9 +116,16 @@ Use the preview server to check the production frontend locally. Nginx redirects
 
 ## Deployment
 
+Follow the [production workflow guide](docs/production-workflow.md) for routine releases. Read it together with the current workflow files; the workflows are authoritative if the documentation differs.
+
+| Workflow | Purpose |
+| --- | --- |
+| [CI](.github/workflows/ci.yml) | Install dependencies, run lint, and build for pull requests and pushes to `main`. |
+| [Deploy production](.github/workflows/deploy-production.yml) | Build the deployment commit, preserve the artifact, wait for protected production approval, deploy, and verify the live HTTPS site. |
+
 ### Hosting setup
 
-The deployment workflow builds the application locally and uploads `dist/` to an **Ubuntu VPS on DigitalOcean**. **Nginx** serves those files, and **Certbot / Let's Encrypt** provides HTTPS for the custom domain. Node.js is needed on the build machine; Nginx serves the deployed files without a Node.js application process.
+GitHub Actions builds the application and deploys the `dist/` artifact to an **Ubuntu VPS on DigitalOcean** after approval through the protected `production` environment. **Nginx** serves those files, and **Certbot / Let's Encrypt** provides HTTPS for the custom domain. Node.js is needed on the GitHub Actions build runner; Nginx serves the deployed files without a Node.js application process.
 
 The canonical site URL is `https://rogerbelman.com`. The server routing design is:
 
@@ -130,72 +140,27 @@ The canonical site URL is `https://rogerbelman.com`. The server routing design i
 
 The React router also handles legacy profile and capitalized page paths during client-side navigation. Nginx handles redirects and status codes for direct requests.
 
-<details>
-<summary><strong>Nginx routing reference</strong></summary>
-
-These directives belong inside the canonical domain's Nginx `server` block, alongside its HTTPS configuration. Set `root` to the directory containing the uploaded build. Configure HTTP and `www` redirects in separate server blocks pointing to `https://rogerbelman.com$request_uri`.
-
-```nginx
-root /var/www/rogerbelman.com;
-index index.html;
-error_page 404 /404.html;
-
-location = / {
-    try_files /index.html =404;
-}
-
-location = /projects {
-    try_files /projects/index.html =404;
-}
-
-location = /experience {
-    try_files /experience/index.html =404;
-}
-
-# Exact canonical routes above take precedence over these redirects.
-location ~* ^/projects/?$ {
-    return 301 /projects;
-}
-
-location ~* ^/experience/?$ {
-    return 301 /experience;
-}
-
-location ~* ^/profile/?$ {
-    return 301 /;
-}
-
-location = /404.html {
-    internal;
-}
-
-location / {
-    try_files $uri $uri/ =404;
-}
-```
-
-Explicit route handlers serve each page's generated metadata. The `=404` fallback preserves an actual HTTP 404 response for unknown paths while displaying the custom page.
-
-After changing server configuration, validate it with `sudo nginx -t` before running `sudo systemctl reload nginx`.
-
-</details>
-
 ### Deploy an update
 
-These commands assume the VPS already has DNS, Nginx, HTTPS, and a writable site directory configured. Replace `YOUR_DEPLOY_USER`, `YOUR_DROPLET_IP`, and the destination path with your deployment values.
-
-From the local repository root:
+1. Fetch the latest remote state, confirm the working tree is clean, and create a dedicated feature branch from the latest `origin/main`.
+2. Make the change and run the local validation commands below.
+3. Review the diff, commit, push the feature branch, and open a pull request against `main`.
+4. Have the repository owner review the pull request, confirm **CI** passes, and squash-merge it.
+5. GitHub Actions runs **CI** and **Deploy production** for the merge commit. The deployment workflow builds the release artifact and waits for the owner's approval through the protected `production` environment.
+6. After approval, GitHub Actions uploads and activates the release, then verifies the live HTTPS site.
+7. Confirm the `main` CI run, deployment workflow, and live verification succeeded before reporting the release as deployed.
 
 ```bash
 npm ci
 npm run lint
 npm run build
-scp -r dist/* YOUR_DEPLOY_USER@YOUR_DROPLET_IP:/var/www/rogerbelman.com/
 ```
 
-Upload the **contents** of `dist/` so `index.html` sits directly in the web root. This copies new files and overwrites matching files; it does not remove older assets. Nginx only needs a reload when its configuration changes.
+Pull-request review and merge, followed by protected production approval, require the repository owner. Do not push application changes directly to `main`, manually copy files to the server, or bypass checks or approval. Manual server work is reserved for recovery explicitly authorized by the owner. Keep credentials and private deployment details out of the repository and logs.
 
 ### Verify a deployment
+
+The deployment workflow checks the public homepage over HTTPS. Confirm that check and the complete workflow succeed, then use the following checks to review routes, redirects, and static files.
 
 Check the profile, projects, experience, resume, and not-found page in a browser, including a direct page load and refresh on `/projects` and `/experience`.
 
@@ -220,6 +185,11 @@ Compare the status codes and `Location` headers with the routing table above. Th
 
 ```text
 portfolio-website/
+├── .github/workflows/
+│   ├── ci.yml                 # Pull-request and main validation
+│   └── deploy-production.yml  # Production build, approval, deployment, and verification
+├── docs/
+│   └── production-workflow.md # Release process and owner responsibilities
 ├── public/                     # Resume, images, favicons, and crawler files
 ├── scripts/
 │   └── prerender-routes.mjs     # Generate page metadata, 404 HTML, and sitemap
@@ -235,6 +205,7 @@ portfolio-website/
 │   ├── App.jsx                # Route definitions
 │   ├── index.css              # Global styles
 │   └── main.jsx               # Application entry point
+├── AGENTS.md                  # Repository instructions for coding agents
 ├── index.html                 # HTML template and structured data
 ├── eslint.config.js
 ├── package.json
