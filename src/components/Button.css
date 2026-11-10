@@ -11,8 +11,11 @@
     border: .125rem solid hsl(208, 85%, 42%);
     border-radius: .5rem;
     font-size: 1.25rem;
-    width: 12.5rem;
+    width: fit-content;
+    min-width: min(12.5rem, 100%);
     max-width: 100%;
+    text-align: center;
+    overflow-wrap: anywhere;
     cursor: pointer;
     font-weight: bold;
     text-decoration: none;

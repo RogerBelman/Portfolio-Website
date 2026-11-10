@@ -1,27 +1,16 @@
 const experiences = [
     {
         company: 'AB Drywall Systems LLC',
-        position: 'Web Developer / Construction Support',
-        period: 'Seasonal/Part-Time, 2023 - Present',
+        position: 'Web Developer',
+        period: 'Jan 2026 - Present',
         location: 'Dallas-Fort Worth, TX',
         link: 'https://www.abdrywallsystemsllc.com/',
-        skills: 'Web Development, Deployment, English/Spanish Communication',
+        skills: 'React, JavaScript, Vite, GitHub Actions, Nginx, DigitalOcean',
         description: [
-            'Develop and maintain the company\'s production website, including deployment on an Ubuntu VPS.',
-            'Deliver construction materials and assist field crews across Dallas-Fort Worth job sites.',
-            'Support job-site communication between English- and Spanish-speaking coworkers and supervisors.',
-        ],
-    },
-    {
-        company: "Sam's Club",
-        position: 'Club Pickup Associate',
-        period: 'May 2025 - Mar 2026',
-        location: 'Dallas, TX',
-        link: 'https://careers.walmart.com/us/en/sams-home',
-        skills: 'Order Fulfillment, Customer Service, Teamwork',
-        description: [
-            'Prepared and staged online pickup orders, checking items for accuracy.',
-            'Assisted customers with pickups and worked with coworkers to locate merchandise.',
+            'Built the company website as sole developer, translating the owner\'s requirements and feedback into responsive service pages and project galleries.',
+            'Developed reusable React components, keyboard-accessible galleries, and lazy-loaded WebP images for responsive project browsing.',
+            'Generated route-specific HTML metadata, canonical URLs, and JSON-LD; maintained an XML sitemap and configured Nginx/HTTPS, redirects, custom 404 responses, and caching.',
+            'Built GitHub Actions CI/CD with lint/build checks and versioned release artifacts; deployed approved builds via rsync with atomic release switching, live HTTPS verification, and rollback support.',
         ],
     },
 ]

@@ -3,11 +3,11 @@ import Button from '../Button.jsx'
 import './ProfileBody.css'
 
 const technicalSkills = [
-    { label: 'Languages', skills: ['Java', 'TypeScript', 'JavaScript', 'Python', 'C/C++', 'SQL', 'HTML/CSS', 'R'] },
+    { label: 'Languages', skills: ['Java', 'TypeScript', 'JavaScript', 'C/C++', 'SQL', 'HTML/CSS', 'R'] },
     { label: 'Frontend', skills: ['React', 'React Router', 'Vite'] },
     { label: 'Backend & Data', skills: ['Spring Boot', 'Spring Security', 'Spring Data JPA', 'PostgreSQL', 'Flyway', 'REST APIs'] },
     { label: 'Testing', skills: ['JUnit', 'Mockito', 'MockMvc', 'Vitest', 'React Testing Library'] },
-    { label: 'Tools/Platforms', skills: ['Git', 'GitHub Actions', 'Docker Compose', 'Linux', 'DigitalOcean', 'Nginx'] },
+    { label: 'Tools/Platforms', skills: ['Git', 'GitHub Actions', 'Docker', 'Docker Compose', 'Linux', 'Nginx', 'DigitalOcean'] },
 ]
 
 function ProfileBody(){
@@ -30,6 +30,17 @@ function ProfileBody(){
                         <Button href="/Resume_Roger_Belman.pdf" target="_blank" text="View Resume"></Button>
                     </div>
                 </div>
+            </section>
+            <section className="education" aria-labelledby="education-heading">
+                <h2 id="education-heading">Education</h2>
+                <h3>The University of Texas at Dallas</h3>
+                <p>Bachelor of Science in Software Engineering</p>
+                <p>May 2026 · GPA: 3.73/4.0</p>
+                <p className="education-coursework">
+                    <strong>Relevant Coursework:</strong> Data Structures &amp; Algorithms,
+                    Advanced Algorithms, Operating Systems, Database Systems, Object-Oriented Design,
+                    Requirements Engineering, Software Architecture, Software Testing &amp; QA
+                </p>
             </section>
             <section className="technical-skills" aria-labelledby="technical-skills-heading">
                 <h2 id="technical-skills-heading">Technical Skills</h2>

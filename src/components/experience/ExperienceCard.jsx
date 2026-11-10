@@ -9,6 +9,7 @@ function ExperienceCard(props){
             <div className="experience-heading">
                 <h2>{props.company}</h2>
                 {props.period && <p className="content-details experience-details">{props.period}</p>}
+                {props.location && <p className="content-details">{props.location}</p>}
                 <h3>{props.position}</h3>
                 <p className="experience-skills">{props.skills}</p>
             </div>
@@ -26,6 +27,7 @@ ExperienceCard.propTypes = {
     company: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
     period: PropTypes.string,
+    location: PropTypes.string,
     link: PropTypes.string.isRequired,
     skills: PropTypes.string.isRequired,
     description: PropTypes.arrayOf(PropTypes.string).isRequired,

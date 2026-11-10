@@ -18,6 +18,7 @@ function ProjectCard(props){
             </ul>
             {props.image && <img className="Image" src={props.image} alt={props.name} />}
             {props.link && <Button href={props.link} target="_blank" text={props.linkText ?? 'Project Link'}></Button>}
+            {props.liveLink && <Button href={props.liveLink} target="_blank" text="Live Application"></Button>}
         </div>
     );
 }
@@ -26,6 +27,7 @@ ProjectCard.propTypes = {
     name: PropTypes.string.isRequired,
     period: PropTypes.string,
     link: PropTypes.string,
+    liveLink: PropTypes.string,
     linkText: PropTypes.string,
     image: PropTypes.string,
     skills: PropTypes.string.isRequired,
